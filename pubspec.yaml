@@ -16,8 +16,15 @@ dependencies:
 
   
   cupertino_icons: ^1.0.6
+
   lottie: ^3.1.2
-  
+
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Accessing Storage Path
+  path_provider: ^2.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
