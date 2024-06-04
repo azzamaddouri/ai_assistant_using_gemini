@@ -1,5 +1,5 @@
 name: ai_assistant
-description: "AI Assistant App based on ChatGPT."
+description: "AI Assistant App based on Gemini."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -28,7 +28,9 @@ dependencies:
   get: ^4.6.6
   
   flutter_animate: ^4.5.0
-
+  http: ^1.2.1
+  google_generative_ai: ^0.4.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
