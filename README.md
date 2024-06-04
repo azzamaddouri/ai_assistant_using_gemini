@@ -1,6 +1,6 @@
 # ai_assistant
 
-AI Assistant App based on ChatGPT.
+AI Assistant App based on Gemini.
 
 ## Getting Started
 
