@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-Future <void> main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Pref.initialize();
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
@@ -19,8 +19,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      title: appName,
-        debugShowCheckedModeBanner: false, home: SplashScreen());
+    return GetMaterialApp(
+        title: appName,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.blue),
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+              color: Colors.blue, fontSize: 20, fontWeight: FontWeight.w500),
+        )),
+        home: const SplashScreen());
   }
 }

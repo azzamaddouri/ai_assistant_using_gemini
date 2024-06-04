@@ -4,10 +4,10 @@ import 'dart:io';
 import 'package:ai_assistant/helper/global.dart';
 import 'package:http/http.dart' as http;
 
-
 class APIs {
-  static Future<void> getAnswer(String prompt) async {
-    final uri = Uri.parse('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$apiKey');
+  static Future<String> getAnswer(String prompt) async {
+    final uri = Uri.parse(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$apiKey');
 
     final body = jsonEncode({
       "contents": [
@@ -31,14 +31,18 @@ class APIs {
         if (candidates != null && candidates.isNotEmpty) {
           final generatedContent = candidates[0]['content']['parts'][0]['text'];
           log('Generated Content: $generatedContent');
+          return generatedContent;
         } else {
           log('No candidates found in the response.');
+          throw Exception('No candidates found in the response.');
         }
       } else {
         log('Request failed with status: ${response.statusCode}');
+        throw Exception('Request failed with status: ${response.statusCode}');
       }
     } catch (e) {
       log('Error occurred: $e');
+      throw Exception('Error occurred: $e');
     }
   }
 }

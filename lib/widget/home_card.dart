@@ -22,47 +22,50 @@ class HomeCard extends StatelessWidget {
             margin: EdgeInsets.only(bottom: mq.height * .02),
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            child: homeType.leftAlign
-                ? Row(
-                    children: [
-                      Container(
-                        width: mq.width * .35,
-                        padding: homeType.padding,
-                        child: Lottie.asset(
-                          'assets/lottie/${homeType.lottie}',
-                        ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        homeType.title,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1),
-                      ),
-                      const Spacer(flex: 2)
-                    ],
-                  )
-                : Row(
-                    children: [
-                      const Spacer(flex: 2),
-                      Text(
-                        homeType.title,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1),
-                      ),
-                      const Spacer(),
-                      Container(
-                        width: mq.width * .35,
-                        padding: homeType.padding,
-                        child: Lottie.asset(
-                          'assets/lottie/${homeType.lottie}',
-                        ),
-                      ),
-                    ],
-                  ))
+            child: InkWell(
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
+                onTap: homeType.onTap,
+                child: homeType.leftAlign
+                    ? Row(
+                        children: [
+                          Container(
+                            width: mq.width * .35,
+                            padding: homeType.padding,
+                            child: Lottie.asset(
+                              'assets/lottie/${homeType.lottie}',
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            homeType.title,
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1),
+                          ),
+                          const Spacer(flex: 2)
+                        ],
+                      )
+                    : Row(
+                        children: [
+                          const Spacer(flex: 2),
+                          Text(
+                            homeType.title,
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1),
+                          ),
+                          const Spacer(),
+                          Container(
+                            width: mq.width * .35,
+                            padding: homeType.padding,
+                            child: Lottie.asset(
+                              'assets/lottie/${homeType.lottie}',
+                            ),
+                          ),
+                        ],
+                      )))
         .animate()
         .fade(duration: 1.seconds, curve: Curves.easeIn);
   }
