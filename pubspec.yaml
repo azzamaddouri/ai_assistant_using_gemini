@@ -36,6 +36,9 @@ dependencies:
   
   http: ^1.2.1
 
+  # App Write Database (for dynamically getting API Key)
+  appwrite: ^12.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

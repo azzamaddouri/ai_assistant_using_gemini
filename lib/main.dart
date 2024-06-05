@@ -1,3 +1,4 @@
+import 'package:ai_assistant/apis/app_write.dart';
 import 'package:ai_assistant/helper/global.dart';
 import 'package:ai_assistant/helper/pref.dart';
 import 'package:ai_assistant/screen/splash_screen.dart';
@@ -8,6 +9,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Pref.initialize();
+  AppWrite.init();
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
