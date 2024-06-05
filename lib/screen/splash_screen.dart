@@ -18,13 +18,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     // Wait for some timeon splash then move to next screen
-    Future.delayed(const Duration(seconds: 2), () {
-       Get.off(() =>
-        Pref.showOnboarding ? const OnboardingScreen() : const HomeScreen());
-    //   Navigator.of(context).pushReplacement(MaterialPageRoute(
-    //       builder: (_) => Pref.showOnboarding
-    //           ? const OnboardingScreen()
-    //           : const HomeScreen()));
+    Future.delayed(const Duration(seconds: 7), () {
+      Get.off(() =>
+          Pref.showOnboarding ? const OnboardingScreen() : const HomeScreen());
+      //   Navigator.of(context).pushReplacement(MaterialPageRoute(
+      //       builder: (_) => Pref.showOnboarding
+      //           ? const OnboardingScreen()
+      //           : const HomeScreen()));
     });
   }
 
@@ -40,6 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const Spacer(flex: 2),
             Center(
               child: Card(
+                color: Colors.cyan,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Padding(

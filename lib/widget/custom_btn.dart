@@ -18,6 +18,9 @@ class CustomBtn extends StatelessWidget {
             textStyle:
                 const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             minimumSize: Size(mq.width * .4, 50)),
-        child: Text(text));
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.white),
+        ));
   }
 }
