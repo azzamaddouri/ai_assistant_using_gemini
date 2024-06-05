@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         title: appName,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+            //useMaterial3: false,
             appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.blue),
           elevation: 0,

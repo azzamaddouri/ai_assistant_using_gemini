@@ -1,6 +1,7 @@
 import 'package:ai_assistant/helper/global.dart';
 import 'package:ai_assistant/model/onboard.dart';
 import 'package:ai_assistant/screen/home_screen.dart';
+import 'package:ai_assistant/widget/custom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -74,8 +75,8 @@ class OnboardingScreen extends StatelessWidget {
                                       Radius.circular(5)))))),
                   const Spacer(),
                   // Button
-                  ElevatedButton(
-                      onPressed: () {
+                  CustomBtn(
+                      onTap: () {
                         if (isLast) {
                           Get.off(() => const HomeScreen());
                           // Navigator.of(context).pushReplacement(
@@ -87,13 +88,7 @@ class OnboardingScreen extends StatelessWidget {
                               curve: Curves.ease);
                         }
                       },
-                      style: ElevatedButton.styleFrom(
-                          shape: const StadiumBorder(),
-                          elevation: 0,
-                          textStyle: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w500),
-                          minimumSize: Size(mq.width * .4, 50)),
-                      child: Text(isLast ? 'Finish' : 'Next')),
+                      text: isLast ? 'Finish' : 'Next'),
                   const Spacer(flex: 2),
                 ],
               );

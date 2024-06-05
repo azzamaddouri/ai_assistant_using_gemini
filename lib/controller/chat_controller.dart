@@ -1,4 +1,5 @@
 import 'package:ai_assistant/apis/apis.dart';
+import 'package:ai_assistant/helper/custom_dialog.dart';
 import 'package:ai_assistant/model/message.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,7 @@ class ChatController extends GetxController {
       list.add(Message(msg: '', msgType: MessageType.bot));
       _scrollDown();
 
-      final res = await APIs.getAnswer(textC.text);
+      final res = await APIs.getTextAnswer(textC.text);
 
       // ai bot
       list.removeLast();
@@ -27,12 +28,14 @@ class ChatController extends GetxController {
       _scrollDown();
 
       textC.text = '';
+    } else {
+      CustomDialog.info('Ask Something !');
     }
   }
 
   // To move to end message
   void _scrollDown() {
     scrollC.animateTo(scrollC.position.maxScrollExtent,
-        duration: Duration(milliseconds: 500), curve: Curves.ease);
+        duration: const Duration(milliseconds: 500), curve: Curves.ease);
   }
 }

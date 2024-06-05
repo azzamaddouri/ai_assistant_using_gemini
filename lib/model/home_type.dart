@@ -9,7 +9,7 @@ enum HomeType { aiChatBot, aiImage, aiTranslator }
 extension MyHomeType on HomeType {
   String get title => switch (this) {
         HomeType.aiChatBot => 'AI ChatBot',
-        HomeType.aiImage => 'AI Image Creator',
+        HomeType.aiImage => 'AI Image Chat',
         HomeType.aiTranslator => 'Language Translator',
       };
 
