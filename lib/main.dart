@@ -22,6 +22,16 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         title: appName,
         debugShowCheckedModeBanner: false,
+        themeMode: Pref.defaultTheme,
+        darkTheme: ThemeData(
+            //useMaterial3: false,
+            brightness: Brightness.dark,
+            appBarTheme: const AppBarTheme(
+              elevation: 0,
+              centerTitle: true,
+              titleTextStyle:
+                  TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            )),
         theme: ThemeData(
             //useMaterial3: false,
             appBarTheme: const AppBarTheme(
@@ -33,4 +43,11 @@ class MyApp extends StatelessWidget {
         )),
         home: const SplashScreen());
   }
+}
+
+extension AppTheme on ThemeData {
+  Color get lightTextColor =>
+      brightness == Brightness.dark ? Colors.white70 : Colors.black54;
+  Color get buttonColor =>
+      brightness == Brightness.dark ? Colors.cyan.withOpacity(.5) : Colors.blue;
 }

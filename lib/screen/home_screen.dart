@@ -4,6 +4,7 @@ import 'package:ai_assistant/model/home_type.dart';
 import 'package:ai_assistant/widget/home_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final _isDarkMode = Pref.isDarkMode.obs;
+
   @override
   void initState() {
     super.initState();
@@ -27,20 +30,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        centerTitle: true,
         title: const Text(
           appName,
-          style: TextStyle(
-              color: Colors.blue, fontSize: 20, fontWeight: FontWeight.w500),
         ),
         actions: [
           IconButton(
               padding: const EdgeInsets.only(right: 10),
-              onPressed: () {},
-              icon: const Icon(
-                Icons.brightness_4_rounded,
-                color: Colors.blue,
-                size: 26,
+              onPressed: () {
+                Get.changeThemeMode(
+                    _isDarkMode.value ? ThemeMode.light : ThemeMode.dark);
+                _isDarkMode.value = !_isDarkMode.value;
+                Pref.isDarkMode = _isDarkMode.value;
+              },
+              icon: Obx(
+                () => Icon(
+                  _isDarkMode.value
+                      ? Icons.brightness_2_rounded
+                      : Icons.brightness_5_rounded,
+                  size: 26,
+                ),
               ))
         ],
       ),
