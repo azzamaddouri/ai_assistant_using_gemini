@@ -1,4 +1,4 @@
-# ai_assistant
+# ai_assistant_using_gemini
 
 AI Assistant App based on Gemini.
 
