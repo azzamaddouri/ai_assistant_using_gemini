@@ -1,16 +1,26 @@
-# ai_assistant_using_gemini
+# AI Assistant Using Gemini
 
-AI Assistant App based on Gemini.
+## Overview
+
+This project showcases an AI Assistant App built with Google Gemini.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Setting Up the Gemini API
 
-A few resources to get you started if this is your first Flutter project:
+To use the Gemini API, you'll need to create an API Key via Google AI Studio. Follow this link to get a free API key:
+[Google AI Studio - API Key](https://aistudio.google.com/app/apikey).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You have two options for managing your API key:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. **Static Configuration**: You can statically pass the API key in the `helpers/global.dart` file.
+2. **Secure Storage**: For better security, you can store the API key in a database. To do this, follow these steps:
+   - Create a free project on [Appwrite](https://www.appwrite.io/).
+   - Inside your project, create a new database.
+   - Add a new attribute, then create a new collection.
+   - Finally, add a new document to store your API key.
+
+### Project Demo
+
+You can watch a demo of the project on YouTube:
+[Project Demo on YouTube](https://youtu.be/uJ_GkhTk9J0)
