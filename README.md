@@ -13,7 +13,7 @@ To use the Gemini API, you'll need to create an API Key via Google AI Studio. Fo
 
 You have two options for managing your API key:
 
-1. **Static Configuration**: You can statically pass the API key in the `helpers/global.dart` file.
+1. **Static Configuration**: You can statically pass the API key in the `helper/global.dart` file.
 2. **Secure Storage**: For better security, you can store the API key in a database. To do this, follow these steps:
    - Create a free project on [Appwrite](https://www.appwrite.io/).
    - Inside your project, create a new database.
