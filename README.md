@@ -23,4 +23,5 @@ You have two options for managing your API key:
 ### Project Demo
 
 You can watch a demo of the project on YouTube:
-[Project Demo on YouTube](https://youtu.be/uJ_GkhTk9J0)
+
+[![Project Demo on YouTube](https://img.youtube.com/vi/uJ_GkhTk9J0/0.jpg)](https://youtu.be/uJ_GkhTk9J0)
